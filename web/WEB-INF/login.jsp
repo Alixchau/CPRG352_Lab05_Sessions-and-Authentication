@@ -12,13 +12,18 @@
         <title>Login Page</title>
     </head>
     <body>
-        <h2>Hello World!</h2>
+        <h2>Log in</h2>
+        <br>
+        <form method="post" action="login">
         <label>Username: </label>
-        <input type="text" name="u_name" value="">
+        <input type="text" name="u_name" value="${username}">
         <br>
         <label>Password: </label>
-        <input type="text" name="u_password" value="">
+        <input type="password" name="u_password" value="${userpassword}">
         <br>
         <input type="submit" value="Log in">
+        </form>
+        <p>${error_message}</p>
+        <p>${logout_message}</p>
     </body>
 </html>
