@@ -32,9 +32,8 @@ public class LoginServlet extends HttpServlet {
             // if logout != null, it means user clicked log out. send log out message to display on login page.
             if (logout != null) {
                 request.setAttribute("logout_message", "You have been successfully logged out.");
-
-                getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
                 session.invalidate();
+                getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
                 return;
             } else {
                 // if do not click on log out, redirect to home page
@@ -53,7 +52,7 @@ public class LoginServlet extends HttpServlet {
 
         //retrieve user input
         String userName = request.getParameter("u_name");
-        String userPassword = request.getParameter("u_password");//request.getParameter("u_password");
+        String userPassword = request.getParameter("u_password");
 
         User u1 = new User(userName, userPassword);
         AccountService validateMethod = new AccountService();
